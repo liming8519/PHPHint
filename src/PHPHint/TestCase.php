@@ -9,10 +9,9 @@ class TestCase
     public function __construct($code)
     {
         if (strstr($code, '<?php') === false) {
-            if(strstr($code, '<?'){
+            if (strstr($code, '<?')) {
                 throw new \RuntimeException('Short tags ("<?") are not recommended. Please switch to full tags ("<?php")');
-            }
-            else{
+            } else {
                 throw new \RuntimeException('No PHP code detected! Maybe you forgot to include the opening PHP-Tag "<?php"?');
             }
         }
